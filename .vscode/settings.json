@@ -28,6 +28,7 @@
     "clang.completion.enable": true,
     "files.associations": {
         "ios": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "ostream": "cpp"
     } // 效果效果比cpptools要好 
 } 
