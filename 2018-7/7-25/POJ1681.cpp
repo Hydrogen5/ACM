@@ -1,3 +1,4 @@
+//Painter's Problem
 #include <bits\stdc++.h>
 using namespace std;
 char x[25][25],pt[25][25];
