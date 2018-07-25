@@ -4,12 +4,13 @@ import java.math.BigInteger;
 import java.util.Scanner;
 class Main{
     public static void main(String[] args) {
-        Scanner cin=new Scanner(System.in);
-        while(cin.hasNext()){
+        Scanner read=new Scanner(System.in);
+        while(read.hasNext()){
             BigInteger m,n;
-            m=cin.nextBigInteger();
-            n=cin.nextBigInteger();
+            m=read.nextBigInteger();
+            n=read.nextBigInteger();
             System.out.println(m.multiply(n));
+            read.close();
         }
     }
 }
