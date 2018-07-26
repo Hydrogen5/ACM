@@ -1,5 +1,5 @@
 //Painter's Problem
-#include <bits\stdc++.h>
+#include <iostream>
 using namespace std;
 char x[25][25],pt[25][25];
 int p[25][25],cg[25][25];
