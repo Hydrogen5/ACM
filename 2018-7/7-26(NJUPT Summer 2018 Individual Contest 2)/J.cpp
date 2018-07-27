@@ -5,14 +5,14 @@
 using namespace std;
 int n,m;
 long long k;
-int cnt=0;
+long long cnt=0;
 long long cell[100][100];
-map<long long,long long>mid[500][500];
+map<long long,long long>mid[500];
 void dfs(int x,int y,long long cur)
 {
     if(x+y==(n+m+2)/2)
     {
-        mid[x][y][cur]++;
+        mid[x][cur]++;
         return;
     }
     if(x<n)
@@ -24,7 +24,7 @@ void sfd(int x,int y,long long cur)
 {
    if(x+y==(n+m+2)/2)
     {
-        cnt += mid[x][y][cur ^ k^cell[x][y]];
+        cnt += mid[x][cur ^ k^cell[x][y]];
         return;
     }
     if(x>1)
