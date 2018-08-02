@@ -30,6 +30,10 @@
         "ios": "cpp",
         "xutility": "cpp",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "iosfwd": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "xtree": "cpp"
     } // 效果效果比cpptools要好 
 } 
