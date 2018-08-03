@@ -14,7 +14,7 @@ void mix(int x,int y)
     int px = find(x);
     int py = find(y);
     pre[px] = py;
-}
+}   
 int main()
 {
     int n,m;
