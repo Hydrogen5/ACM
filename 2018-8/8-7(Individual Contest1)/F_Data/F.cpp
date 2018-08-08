@@ -11,7 +11,7 @@ int main()
     ll Maxn = 0;
     for (int l = 1; l <= T;l++)
     {
-        Maxn = 0;
+        Maxn = -999999999;
         char s[25];
         cin>>s;
         int len = strlen(s);
@@ -58,9 +58,11 @@ int main()
                             e += (s[n] - '0') * tmp;
                             tmp *= 10;
                         }
-                        ll ans = c * d;
-                        ans /= e;
-                        ans += a - b;
+                        ll sec = c * d / e;
+                        //cout << sec << endl;
+                        ll ans = a + b - sec;
+                        //cout << a << " " << b << " " << c << " " << d << " " << e << endl;
+                        //cout << ans << endl;
                         if(ans>Maxn)
                             Maxn = ans;
                     }
