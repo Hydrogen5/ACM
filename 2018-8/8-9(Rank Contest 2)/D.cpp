@@ -14,14 +14,14 @@ int main()
         char s[110];
         cin >> s;
         memset(a, 0, sizeof(a));
-        int cnt = 0;
+        long long cnt = 0;
         for(int i=0;i<strlen(s);i++)
         {
             if(s[i]=='B') a[0]++;
             if(s[i]=='M') a[1]++;
             if(s[i]=='C') a[2]++;
         }
-        int r;
+        long long r;
         cin >> n[0] >> n[1] >> n[2];
         cin >> p[0] >> p[1] >> p[2];
         cin >> r;
@@ -33,8 +33,8 @@ int main()
                     n[i] -= a[i];
                 else
                 {
-                    n[i] = 0;
                     r -= (a[i] - n[i]) * p[i];
+                    n[i] = 0;
                 }
             }
             if(r<0)

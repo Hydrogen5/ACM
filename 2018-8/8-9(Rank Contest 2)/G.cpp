@@ -4,7 +4,7 @@ int main()
 {
     int n;
     cin>>n;
-    if(n==6||n==8||n==10) cout<<2<<endl;
+    if(n==6||n==8||n==10||n==14||n==16) cout<<2<<endl;
     else
         cout << 1 << endl;
 }
