@@ -53,35 +53,35 @@ void change(int p,int x,int d)
 int main()
 {
     int T;
-    cin >> T;
+    scanf("%d",&T);
     for(int afs=1;afs<=T;afs++)
     {
         printf("Case %d:\n", afs);
-        cin>>n;
+        scanf("%d",&n);
         for (int i = 1;i<=n;i++)
-            cin >> a[i];
+            scanf("%d",&a[i]);
         build(1, 1, n);
         char s[10];
-        while(cin>>s)
+        while(scanf("%s",s))
         {
             if(s[0]=='E')
                 break;
             if(s[0]=='Q')
             {
                 int l,r;
-                cin>>l>>r;
+                scanf("%d %d", &l, &r);
                 cout << query(1, l, r)<<endl;
             }
             if(s[0]=='A')
             {
                 int x,d;
-                cin>>x>>d;
+                scanf("%d %d", &x, &d);
                 change(1, x, d);
             }
             if(s[0]=='S')
             {
                 int x,d;
-                cin>>x>>d;
+                scanf("%d %d", &x, &d);
                 change(1, x, -d);
             }
         }
