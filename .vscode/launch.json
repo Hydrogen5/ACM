@@ -6,6 +6,8 @@
             "name": "Python",
             "type": "python",
             "request": "launch",
+            "args": [],
+            "cwd": "${workspaceFolder}",
             "program": "${file}"
         },
         {
