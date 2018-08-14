@@ -8,7 +8,7 @@ using namespace std;
 struct Node
 {
     int l,r,set;
-}node[50000];
+}node[500000];
 
 void build(int p,int l,int r)
 {
