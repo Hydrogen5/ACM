@@ -1,4 +1,5 @@
 //Til the Cows Come Home
+//dijkstra+堆优化
 #include <iostream>
 #include <cstdio>
 #include <map>
@@ -6,23 +7,31 @@
 #include <vector>
 #include <cstring>
 using namespace std;
-int ver[2010], head[2010], edge[2010], Next[2010], dist[2010];
-int vis[2010];
+int ver[4010], head[4010], edge[4010], Next[4010], dist[4010];
+int vis[4010];
 int N;
+int tot = 0;
 priority_queue<pair<int,int> > pq;
+void addedge(int x,int y,int z)
+{
+    ver[++tot] = y;
+    edge[tot] = z;
+    Next[tot] = head[x];
+    head[x] = tot;
+}
 void dijkstra()
 {
     memset(dist,0x3f,sizeof(dist));
     memset(vis, 0, sizeof(vis));
     dist[1]=0;
-    pq.push(make_pair(0, N));
+    pq.push(make_pair(0, 1));
     while(!pq.empty())
     {
         int x = pq.top().second;
         pq.pop();
         if(vis[x]) continue;
         vis[x]=1;
-        for (int i = head[x]; i;i=Next[x])
+        for (int i = head[x]; i;i=Next[i])
         {
             int y = ver[i];
             int z = edge[i];
@@ -38,16 +47,13 @@ int main()
 {
     int T;
     cin>>T>>N;
-    int tot = 0;
     for (int i = 0; i < T;i++)
     {
         int x,y,z;
         scanf("%d %d %d",&x,&y,&z);
-        ver[++tot] = y;
-        edge[tot] = z;
-        Next[tot] = head[x];
-        head[x] = tot;
+        addedge(x, y, z);
+        addedge(y, x, z);
     }
     dijkstra();
-    printf("%d\n", dist[1]);
+    printf("%d\n", dist[N]);
 }
