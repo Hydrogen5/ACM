@@ -1,5 +1,5 @@
 //Wormholes
-//SPFA判负权
+//SPFA判负环
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>
