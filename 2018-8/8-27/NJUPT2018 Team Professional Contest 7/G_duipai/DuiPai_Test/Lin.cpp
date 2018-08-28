@@ -1,0 +1,70 @@
+#include<cstdio>
+#include<cstring>
+using namespace std;
+
+#define LL long long
+#define MAXN 1000005
+inline bool scan_d(LL &num)
+{
+	char in; bool IsN = false;
+	in = getchar();
+	if (in == EOF) return false;
+	while (in != '-' && (in<'0' || in>'9')) in = getchar();
+	if (in == '-') { IsN = true; num = 0; }
+	else num = in - '0';
+	while (in = getchar(), in >= '0'&&in <= '9') {
+		num *= 10, num += in - '0';
+	}
+	if (IsN) num = -num;
+	return true;
+}
+
+LL a[MAXN];
+LL vis[MAXN];
+LL N;
+
+LL ans;
+
+void find(LL be)
+{
+	LL sum = a[be];
+	LL index = be;
+
+	while (sum < 0 && ans>0)
+	{
+		if (!vis[index])
+			ans--;
+		vis[index] = 1;
+
+		index--;
+		if (index < 0)index = N - 1;
+		sum += a[index];
+	}
+}
+
+int main()
+{
+
+
+	while (scan_d(N)&& N)
+	{
+	
+		for (LL i = 0; i < N; i++)
+		{
+			scan_d(a[i]);
+		}
+		memset(vis, 0, sizeof(vis));
+
+		ans = N;
+		for (LL i = N - 1; i >= 0; i--)
+		{
+			if (a[i] < 0 && !vis[i])
+			{
+				find(i);
+			}
+		}
+		printf("%I64d\n", ans);
+	}
+
+	return 0;
+}
